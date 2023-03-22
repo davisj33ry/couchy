@@ -2,7 +2,7 @@
   "name": "couchy",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server.js",
     "client": "cd client && npm run start",
