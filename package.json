@@ -4,12 +4,12 @@
   "description": "",
   "main": "scr/App.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run build &&npm run start",
-    "start:prod": "cd server && npm run start",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
+    "start": "node server.js",
+    "client": "cd client && npm start",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install && npm run build"
+    "heroku-postbuild": "npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
