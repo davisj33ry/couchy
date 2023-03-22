@@ -2,17 +2,17 @@
   "name": "couchy",
   "version": "1.0.0",
   "description": "",
-  "main": "scr/App.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "client": "cd client && npm run start",
-    "heroku-postbuild": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "concurrently": "^5.1.0"
   },
@@ -20,10 +20,12 @@
     "eslint-visitor-keys": "^3.3.0",
     "express": "^4.17.2",
     "graphql": "^15.8.0",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "engines": {
-    "node": "18.12.1",
-    "npm": ">=9.x"
+    "node": "14.x",
+    "npm": "7.x"
   }
 }
