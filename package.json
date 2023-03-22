@@ -2,9 +2,9 @@
   "name": "couchy",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "scr/App.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start",
+    "start": "npm run start",
     "start:prod": "cd server && npm run start",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
