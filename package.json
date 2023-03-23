@@ -2,13 +2,14 @@
   "name": "couchy",
   "version": "1.0.0",
   "description": "",
-  "main": "scr/App.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "node server.js",
-    "client": "cd client && npm run start",
-    "heroku-postbuild": "cd client && npm run build",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -20,11 +21,10 @@
     "eslint-visitor-keys": "^3.3.0",
     "express": "^4.17.2",
     "graphql": "^15.8.0",
-    "if-env": "^1.0.4",
-
+    "if-env": "^1.0.4"
   },
   "engines": {
-    "node": "18.12.1",
+    "node": "18.21.1",
     "npm": ">=9.x"
   }
 }
